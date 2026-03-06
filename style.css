@@ -119,3 +119,41 @@ html, body {
 .projectsGrid a:hover {
     color:grey;
 }
+
+.about {
+    display: flex;
+}
+
+.leftAbout {
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+}
+
+.background {
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.now {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.images {
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}

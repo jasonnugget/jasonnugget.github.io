@@ -65,6 +65,7 @@ a {
 .theme-switch svg {
     width: 2rem;
     height: 2rem;
+    fill: var(--icon-color);
 }
 
 .theme-switch svg:last-child {
@@ -72,5 +73,9 @@ a {
 }
 
 .darkMode .theme-switch svg:first-child {
+    display: none;
+}
+
+.darkMode .theme-switch svg:last-child {
     display: block;
 }

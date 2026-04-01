@@ -1,0 +1,35 @@
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+}
+
+.homepage {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.hero {
+    text-align: center;
+}
+
+img {
+    width: 390.375px;
+    height: 520.3125px;
+    object-fit: contain;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+}

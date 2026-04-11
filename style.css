@@ -42,40 +42,91 @@ img {
     gap: 20px;
 }
 
-a {
+.icons a {
     text-decoration: none;
     color: var(--icon-color);
     font-size: 1.5rem;
 }
 
-.theme-switch {
+
+.header {
     position: fixed;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: none;
-    border: none;
+    width: 100%;
+    font-weight: 700;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+.header a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.aboutSection {
+    display: flex;
+    gap: 50px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightSide {
+    display: flex;
+    gap: 40px;
+}
+
+.reading h1 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.reading {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 600px;
+    text-indent: 2em;
+}
+
+.quote {
+    text-indent: 0em;
+    font-style: italic;
+    text-align: center;
+}
+
+.experience {
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 20px;
-    right: 20px;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 80px;
 }
 
-.theme-switch svg {
-    width: 2rem;
-    height: 2rem;
-    fill: var(--icon-color);
+
+#bgCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
 }
 
-.theme-switch svg:last-child {
-    display: none;
+.content {
+    position: relative;
+    z-index: 1;
+    pointer-events:none;
 }
 
-.darkMode .theme-switch svg:first-child {
-    display: none;
-}
-
-.darkMode .theme-switch svg:last-child {
-    display: block;
+a {
+    pointer-events: auto;
 }

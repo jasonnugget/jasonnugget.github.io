@@ -3,46 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my first portfolio</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>j4son.dev</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    <div class="content">
-        <div class="header">
-                <div class="websiteHome">
-                    <div><a href="index.html">j4son.dev</a></div>
-                </div>
-                <div class="rightSide">
-                    <div><a href="/pages/projects.html">Projects</a></div>
-                    <div><a href="/pages/aboutme.html">About Me</a></div>
-                    <div><a href="/pages/experience.html">Experience</a></div>
-                </div>
-            </div>
+<body class="route-home">
+    <div class="header">
+        <div class="websiteHome">
+            <div><a href="/" data-route="home">j4son.dev</a></div>
+        </div>
+        <div class="rightSide">
+            <div><a href="/projects" data-route="projects">Projects</a></div>
+            <div><a href="/about" data-route="about">About Me</a></div>
+            <div><a href="/experience" data-route="experience">Experience</a></div>
+        </div>
+    </div>
+
+    <main id="view"></main>
+
+    <div id="rubiksCube"></div>
+
+    <div id="loadingOverlay">
+        <div id="stickerGrid"></div>
+    </div>
+
+    <template id="tpl-home">
         <div class="homepage">
             <div class="hero">
-                <h1>
-                    hello, my name is jason!
-                </h1>
-                <p>
-                    an aspiring software engineer @ UCF.
-                </p>
+                <h1>hello, my name is jason!</h1>
+                <p>an aspiring software engineer @ UCF.</p>
                 <div class="icons">
                     <a href="https://github.com/jasonnugget" target="_blank"><i class="fa-brands fa-github"></i></a>
                     <a href="https://x.com/jasonexpl0res" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="https://www.linkedin.com/in/j-nguyen05/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
-            <div id="rubiksCube">
-                
+        </div>
+    </template>
+
+    <template id="tpl-projects">
+        <h1 class="projectsPage">my projects:</h1>
+        <div class="grid">
+            <div class="projectBox">
+                <a href="https://github.com/jasonnugget/Sense" target="_blank">
+                    <img src="/pages/project images/sense.png" alt="sense project">
+                </a>
+                <h3>Project Sense</h3>
+                <p>
+                    A real time weapon detection system built to upgrade systems of cameras. Utilizing
+                    YOLO v11 model, we finetuned to increase accuracy of detections for real and false weapons.
+                    I designed the backend utilizing FastAPI, OpenCV, and PostgreSQL.
+                </p>
             </div>
-    </div>
-    </div>
-    
+            <div class="projectBox"><h3>this website</h3></div>
+            <div class="projectBox"><h3>more coming soon!</h3></div>
+        </div>
+    </template>
+
+    <template id="tpl-about">
+        <div class="aboutSection">
+            <div class="reading">
+                <h1>some things about me:</h1>
+                <p>
+                    Hi! My name is Jason! I am currently a sophomore at University of Central
+                    Florida majoring in computer science. What I am passionate about is learning
+                    about new technology and understanding how certain things work, specifically anything
+                    practical and challenging! I enjoy hyperfixating on tasks that make me think and challenge
+                    my perspective, and I love building, creating, and designing what I imagine. Some hobbies
+                    of mine are chess, games, investing, and building!
+                </p>
+                <p>
+                    What do I plan to use this portfolio for? I want to show what I build, think, and create
+                    and hopefully meet like-minded people along the way! Beyond my skills, this site reflects
+                    what I'm passionate about and how I'm growing. My projects page is a blog format where I
+                    share what I built, what I used, and what I learned.
+                </p>
+                <p class="quote">
+                    from building and creating my visions, i hope to create an impact in the environment around me
+                </p>
+            </div>
+            <img src="/images/personal.jpg">
+        </div>
+    </template>
+
+    <template id="tpl-experience">
+        <h1 class="experience">I HAVE NONE (YET)</h1>
+    </template>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="cube.js"></script>
+    <script src="router.js"></script>
 </body>
 </html>

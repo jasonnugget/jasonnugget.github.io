@@ -1,44 +1,60 @@
 :root {
     --background-color: white;
     --text-color: black;
-    --icon-color:black;
+    --icon-color: black;
 }
 
-.darkMode {
-    --background-color: black;
-    --text-color: white;
-    --icon-color:white;
-}
+* { box-sizing: border-box; }
 
 body {
     font-family: "Inter", sans-serif;
     margin: 0;
     background-color: var(--background-color);
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
-.homepage {
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-weight: 700;
+    padding: 20px 40px;
     display: flex;
-    gap: 50px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 0;
+    z-index: 500;
+    transition: opacity 300ms;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.rightSide {
+    display: flex;
+    gap: 40px;
+}
+
+main#view {
+    min-height: 100vh;
+}
+
+/* ----- Homepage layout ----- */
+.homepage {
+    position: relative;
     min-height: 100vh;
 }
 
 .hero {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
     text-align: center;
-}
-
-#rubiksCube {
-    height: 500px;
-    width: 500px;
-}
-
-img {
-    width: 390.375px;
-    height: 520.3125px;
-    object-fit: contain;
 }
 
 .icons {
@@ -53,45 +69,50 @@ img {
     font-size: 1.5rem;
 }
 
-
-.header {
+/* ----- Cube (persistent DOM) ----- */
+#rubiksCube {
     position: fixed;
-    width: 100%;
-    font-weight: 700;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    padding-left: 40px;
-    padding-right: 40px;
-
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 450ms, top 450ms cubic-bezier(0.65, 0, 0.35, 1), left 450ms cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-.header a {
-    text-align: center;
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
+/* Home: cube sits to the right of the hero block. */
+body.route-home #rubiksCube {
+    left: 70%;
 }
 
+/* Non-home sections hide the cube (smooth opacity fade, no abrupt display change). */
+body.route-projects #rubiksCube,
+body.route-about #rubiksCube,
+body.route-experience #rubiksCube {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Loading overlay centers the cube and keeps it visible regardless of route. */
+body.loading #rubiksCube {
+    opacity: 1;
+    left: 50%;
+    pointer-events: auto;
+    z-index: 1001;
+}
+
+#rubiksCube.fading-out { opacity: 0 !important; }
+
+/* ----- About ----- */
 .aboutSection {
     display: flex;
     gap: 50px;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
-}
-
-.rightSide {
-    display: flex;
-    gap: 40px;
-}
-
-.reading h1 {
-    padding: 0;
-    margin: 0;
-    text-align: center;
+    padding: 100px 40px 40px;
 }
 
 .reading {
@@ -102,45 +123,46 @@ img {
     text-indent: 2em;
 }
 
+.reading h1 { padding: 0; margin: 0; text-align: center; }
+
 .quote {
-    text-indent: 0em;
+    text-indent: 0;
     font-style: italic;
     text-align: center;
 }
 
+.aboutSection img {
+    width: 390px;
+    height: 520px;
+    object-fit: contain;
+}
+
+/* ----- Experience ----- */
 .experience {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0;
     margin: 0;
     font-size: 80px;
+    text-align: center;
 }
 
-
-#bgCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* ----- Projects ----- */
+.projectsPage {
+    padding-top: 100px;
+    text-align: center;
+    margin: 0;
 }
-
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
-    padding-top: 50px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 40px 100px;
     gap: 20px;
     margin: 0 auto;
-}
-
-.projectsPage {
-    padding-top: 85px;
-    text-align: center;
-    margin: 0;
 }
 
 .projectBox {
@@ -152,17 +174,70 @@ img {
     align-items: center;
     border-radius: 10px;
     padding: 10px;
-    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 400ms;
 }
 
 .projectBox img {
-    width:100%;
+    width: 100%;
     height: 250px;
     object-fit: cover;
 }
 
-.projectBox h3, .projectBox p {
-    margin: 0;
-    text-align: left;
+.projectBox h3,
+.projectBox p {
     margin: 10px;
+    text-align: left;
 }
+
+.projectBox.pre-morph { opacity: 0; }
+.projectBox.revealing { opacity: 1; }
+
+/* ----- Loading overlay ----- */
+#loadingOverlay {
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 400ms;
+}
+
+body.loading #loadingOverlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+body.loading .header {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ----- Sticker grid (for projects morph) ----- */
+#stickerGrid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 6px;
+    z-index: 1002;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 350ms;
+}
+
+#stickerGrid.visible { opacity: 1; }
+
+.sticker {
+    background: #ffffff;
+    border: 2px solid #111;
+    border-radius: 8px;
+    transition: opacity 300ms;
+    will-change: transform, opacity;
+}
+
+.sticker.discarded { opacity: 0; }

@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="route-home">
+    <video id="bgVideo" autoplay muted loop playsinline></video>
+
     <div class="header">
         <div class="websiteHome">
             <div><a href="/" data-route="home">j4son.dev</a></div>
@@ -23,12 +25,6 @@
     </div>
 
     <main id="view"></main>
-
-    <div id="rubiksCube"></div>
-
-    <div id="loadingOverlay">
-        <div id="stickerGrid"></div>
-    </div>
 
     <template id="tpl-home">
         <div class="homepage">
@@ -45,11 +41,11 @@
     </template>
 
     <template id="tpl-projects">
-        <h1 class="projectsPage">my projects:</h1>
+        <h1 class="projectsPage">My Projects:</h1>
         <div class="grid">
             <div class="projectBox">
                 <a href="https://github.com/jasonnugget/Sense" target="_blank">
-                    <img src="/pages/project images/sense.png" alt="sense project">
+                    <img src="/images/projects/sense.png" alt="sense project">
                 </a>
                 <h3>Project Sense</h3>
                 <p>
@@ -58,7 +54,16 @@
                     I designed the backend utilizing FastAPI, OpenCV, and PostgreSQL.
                 </p>
             </div>
-            <div class="projectBox"><h3>this website</h3></div>
+            <div class="projectBox">
+                
+                <img src="/images/projects/portfoliosite.png" alt="portfolio">
+                <h3>Portfolio Website</h3>
+                <p>
+                    I built the website using only HTML, CSS, and JavaScript. It was built 
+                    with my own SPA router to support the usage of the video in the background. 
+                    I deployed on GitHub Pages with my own domain.
+                </p>
+            </div>
             <div class="projectBox"><h3>more coming soon!</h3></div>
         </div>
     </template>
@@ -66,20 +71,18 @@
     <template id="tpl-about">
         <div class="aboutSection">
             <div class="reading">
-                <h1>some things about me:</h1>
+                <h1>About Me:</h1>
                 <p>
                     Hi! My name is Jason! I am currently a sophomore at University of Central
-                    Florida majoring in computer science. What I am passionate about is learning
-                    about new technology and understanding how certain things work, specifically anything
-                    practical and challenging! I enjoy hyperfixating on tasks that make me think and challenge
-                    my perspective, and I love building, creating, and designing what I imagine. Some hobbies
-                    of mine are chess, games, investing, and building!
+                    Florida majoring in computer science. I am passionate about problem solving,
+                    building, and personal growth! I tend to hyperfixate on tasks that challenge
+                    me in a unique way that ultimately benefits my learning. Some hobbies I love are 
+                    chess, gaming, and traveling!
                 </p>
                 <p>
-                    What do I plan to use this portfolio for? I want to show what I build, think, and create
-                    and hopefully meet like-minded people along the way! Beyond my skills, this site reflects
-                    what I'm passionate about and how I'm growing. My projects page is a blog format where I
-                    share what I built, what I used, and what I learned.
+                    What do I plan to use this portfolio for? I want to display what I build, think, and create
+                    Through this display, I hope to meet like-minded people along the way! Beyond my skills, this site reflects
+                    what I'm passionate about and my prgoress!
                 </p>
                 <p class="quote">
                     from building and creating my visions, i hope to create an impact in the environment around me
@@ -93,8 +96,7 @@
         <h1 class="experience">I HAVE NONE (YET)</h1>
     </template>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="cube.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
     <script src="router.js"></script>
 </body>
 </html>

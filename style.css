@@ -236,3 +236,77 @@ main#view {
     margin: 10px;
     text-align: left;
 }
+
+/* ----- Video-quality warning popup ----- */
+#videoWarning {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    max-width: 340px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 40px 14px 14px;
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+    line-height: 1.45;
+    z-index: 1100;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 400ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+#videoWarning[hidden] { display: none; }
+
+#videoWarning.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.videoWarningIcon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+}
+
+.videoWarningText strong {
+    display: block;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    margin-bottom: 2px;
+}
+
+.videoWarningText p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+#videoWarningClose {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 2px 6px;
+    transition: color 200ms ease;
+}
+
+#videoWarningClose:hover { color: #fff; }

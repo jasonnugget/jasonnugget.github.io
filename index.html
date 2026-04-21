@@ -26,6 +26,17 @@
 
     <main id="view"></main>
 
+    <div id="videoWarning" role="status" aria-live="polite" hidden>
+        <div class="videoWarningIcon" aria-hidden="true"><i class="fa-solid fa-wifi"></i></div>
+        <div class="videoWarningText">
+            <strong>Background video notice</strong>
+            <p>Quality is based on your internet speed. Sometimes it will load at 1080p, but due to the continuous loop,
+                quality may fluctuate.
+            </p>
+        </div>
+        <button id="videoWarningClose" aria-label="Dismiss notice">&times;</button>
+    </div>
+
     <template id="tpl-home">
         <div class="homepage">
             <div class="hero">
@@ -98,5 +109,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1/dist/hls.min.js"></script>
     <script src="router.js"></script>
+    <script>
+        (function () {
+            const warning = document.getElementById('videoWarning');
+            const closeBtn = document.getElementById('videoWarningClose');
+            if (sessionStorage.getItem('videoWarningDismissed') === '1') return;
+            warning.hidden = false;
+            requestAnimationFrame(() => warning.classList.add('visible'));
+            closeBtn.addEventListener('click', () => {
+                warning.classList.remove('visible');
+                sessionStorage.setItem('videoWarningDismissed', '1');
+                setTimeout(() => { warning.hidden = true; }, 400);
+            });
+        })();
+    </script>
 </body>
 </html>

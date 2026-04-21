@@ -206,6 +206,12 @@ main#view {
         box-shadow 350ms ease,
         background 350ms ease,
         border-color 350ms ease;
+    
+}
+
+.projectBox a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .projectBox:hover {

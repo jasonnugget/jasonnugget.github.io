@@ -237,6 +237,11 @@ main#view {
     filter: grayscale(0%) brightness(1) contrast(1);
 }
 
+.projectBox a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .projectBox h3,
 .projectBox p {
     margin: 10px;

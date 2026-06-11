@@ -21,10 +21,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-
-      <p className={styles.quote}>
-        from building and creating my visions, i hope to create an impact in the environment around me
-      </p>
     </div>
   )
 }

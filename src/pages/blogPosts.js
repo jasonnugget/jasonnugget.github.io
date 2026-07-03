@@ -32,6 +32,9 @@ Another issue I ran into is that it is very difficult to get Claude or ChatGPT t
 reason I think it is difficult for me to learn. Anyways, I think bot developers are so cool just by the fact they are in constant
 competition. My goal is to be able to reverse engineer shape by the end of the month hopefully and get it done. Then move onto a different
 antibot in the future.
+
+Edit at 3:04AM. I really don't know how any of this works. I just got claude to de-obfuscate a challenge.js file from shopify, but that is it.
+I think I will just try to create a flow however (could be insanely inefficient, but as long as it works?) and improve it from there.
     `,
   },
 ]

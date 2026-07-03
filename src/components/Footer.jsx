@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 const links = [
   { to: '/', label: 'home', end: true },
   { to: '/projects', label: 'projects' },
-  { to: '/experience', label: 'experience' },
+  { to: '/blog', label: 'blog' },
   { to: '/contact', label: 'contact' },
 ]
 

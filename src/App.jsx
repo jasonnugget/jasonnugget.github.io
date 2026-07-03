@@ -2,7 +2,8 @@ import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
-import Experience from './pages/Experience'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import Contact from './pages/Contact'
 import './App.css'
 
@@ -14,7 +15,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

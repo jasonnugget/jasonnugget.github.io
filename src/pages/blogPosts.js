@@ -35,6 +35,9 @@ antibot in the future.
 
 Edit at 3:04AM. I really don't know how any of this works. I just got claude to de-obfuscate a challenge.js file from shopify, but that is it.
 I think I will just try to create a flow however (could be insanely inefficient, but as long as it works?) and improve it from there.
+
+Edit at 4:05AM. Ok yeah I think I am just gonna make a really crappy version of a checkout bot because this is difficult figuring out what everything
+does in a folder. I will try my best to keep improving it overtime. I can't believe I have another 29 days of this.
     `,
   },
 ]

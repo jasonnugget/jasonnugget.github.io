@@ -38,6 +38,24 @@ I think I will just try to create a flow however (could be insanely inefficient,
 
 Edit at 4:05AM. Ok yeah I think I am just gonna make a really crappy version of a checkout bot because this is difficult figuring out what everything
 does in a folder. I will try my best to keep improving it overtime. I can't believe I have another 29 days of this.
+
+Honestly, didn't get much done today. Solved 3 leetcodes and that was it. We will do more tomorrow.
+    `,
+  },
+  {
+  date: '2026-07-04',
+    title: 'My love for CS | Day 2',
+    body: `
+I've officially decided that instead of just trying to use this blog for learning to solve antibot, I will just keep track of my progress.
+I really love computer science, but I'm lost in a way. Using this to document my day to day life and show what I do will help me reflect whether
+I am wasting my time or not.
+
+Anyways, today I didn't do much. I am back in Jacksonville and found a very nice article that was discussing how to use PerimeterX SDK, but it required
+an android emulator and Mac Silicon was not very well supported for the ones I needed to use. I return tomorrow. I completed 3 neetcode questions (currently at 8/150) where
+I am doing it with a friend so we can explain code to each other and hold each other accountable.
+
+I have also been working on a side project, where hopefully I can show more of sooner or later. I also decided I am going to work on reverse engineer nudata,
+through Kohl's login. I heard this is one of the simpler ones.
     `,
   },
 ]

@@ -42,6 +42,7 @@ does in a folder. I will try my best to keep improving it overtime. I can't beli
 Honestly, didn't get much done today. Solved 3 leetcodes and that was it. We will do more tomorrow.
     `,
   },
+
   {
   date: '2026-07-04',
     title: 'My love for CS | Day 2',
@@ -63,6 +64,17 @@ locate these javascript finals (typically find the request you are interested in
 flows of the website, how cookies are generated, what the website asks for and so on.
 
 I also learned that reading AST and using tools like Babel are significant to learn. Hopefully I am going down the right road...
+    `,
+  },
+
+  {
+  date: '2026-07-05',
+    title: 'My love for CS | Day 3',
+    body: `
+I worked on my project more today due to having assignments from my CS2 class to complete and a test soon on matrix and linear algebra. I did not reverse engineer
+much, but I did "code", if you can even call it that anymore (use genAI), today by working on my side project/business. Will be continuing to work on 
+this project alongside reverse engineering since genAI really does allow you to do both. I also had to drive back from Jacksonville to Orlando which took up most of
+my time. 
     `,
   },
 ]

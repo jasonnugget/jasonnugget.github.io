@@ -67,7 +67,7 @@ I also learned that reading AST and using tools like Babel are significant to le
   },
   {
   date: '2026-07-05',
-    title: 'My love for CS | Day 3',
+    title: 'busy | Day 3',
     body: `
 I worked on my project more today due to having assignments from my CS2 class to complete and a test soon on matrix and linear algebra. I did not reverse engineer
 much, but I did "code", if you can even call it that anymore (use genAI), today by working on my side project/business. Will be continuing to work on 

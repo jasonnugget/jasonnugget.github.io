@@ -79,10 +79,8 @@ my time.
   },
 ]
 
-// --- helpers (you don't need to touch anything below) ---
 
-// Turns a title into the URL slug, e.g. "Starting a blog" -> "starting-a-blog".
-// The post's page lives at /blog/<slug>. (Changing a title changes its URL.)
+
 export function slugify(title) {
   return title
     .toLowerCase()
@@ -91,7 +89,6 @@ export function slugify(title) {
     .replace(/^-+|-+$/g, '')
 }
 
-// Posts with a `slug` attached, ready to render/link.
 export const postsWithSlugs = posts.map((p) => ({ ...p, slug: slugify(p.title) }))
 
 export function getPost(slug) {

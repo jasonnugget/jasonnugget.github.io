@@ -42,7 +42,6 @@ does in a folder. I will try my best to keep improving it overtime. I can't beli
 Honestly, didn't get much done today. Solved 3 leetcodes and that was it. We will do more tomorrow.
     `,
   },
-
   {
   date: '2026-07-04',
     title: 'My love for CS | Day 2',
@@ -66,7 +65,6 @@ flows of the website, how cookies are generated, what the website asks for and s
 I also learned that reading AST and using tools like Babel are significant to learn. Hopefully I am going down the right road...
     `,
   },
-
   {
   date: '2026-07-05',
     title: 'My love for CS | Day 3',

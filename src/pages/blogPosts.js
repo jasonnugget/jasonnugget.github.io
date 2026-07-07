@@ -75,6 +75,29 @@ this project alongside reverse engineering since genAI really does allow you to 
 my time. 
     `,
   },
+  {
+  date: '2026-07-06',
+    title: 'the fundamentals | Day 4',
+    body: `
+I finished my first website. Well, it was mainly AI but now it is in beta testing with 20 users already. Anyways, one of my main work flows now is that
+for time sensitive projects where I just care about it working, I will just use AI. What I am doing in the background though is going through the Odin Project
+where I hand code and learn the fundamentals of web dev. I think I need to learn how to write with javascript first before I try to reverse engineer it.
+
+Honestly, I have been doing a lot of "coding" and learning instead of focusing on my classes. Matrix and linear algebra needs to be crammed all day Tuesday
+and Wednesday so I will be doing that and going through the Odin Project. I plan to rebuild my portfolio website from scratch as a good project and go from there. 
+To me, it is important to understand everything about your product so when things break, it is easier to identify then relying on AI. I told myself that competent people
+can do it all. Hand code, vibe code, get good grades, and this is what mainly drives me. I feel the need to prove to myself that I am competent enough to do all these things.
+
+Anyways, I am on the library web app project in the javascript section of the odin project. I am a bit rusty, but I will just pick up html and css as these aren't very difficult
+anyways as time passes. I feel like my understanding of programming is good enough for me to complete this within a month with time dedicated 1-2 hours a day. The main goal is to 
+be exposed to understanding development and writing actual lines of code that I understand. 
+
+It is hard to find a balance between learning and getting things shipped because I love both. I got into software development because I wanted to build things that I think of
+and things that are useful for me, but now with AI tooling it is insanely fast to do these things and I don't mind at all. But, I also love learning how things work because I 
+don't like when things break, I don't like outsourcing my thinking for things I care about or not being able to explain something I claim to built. This is where my love for learning
+comes in, hence this is why I think there is a difficult balance for me between these two.
+    `,
+  },
 ]
 
 

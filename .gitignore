@@ -1,3 +1,5 @@
-node_modules
-dist
 .claude
+.DS_Store
+
+# local-only blog post template (copy it to make a new post)
+blog.template.html

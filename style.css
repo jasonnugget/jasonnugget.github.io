@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: black;
+  color: gray;
+  font-family: "JetBrains Mono", monospace;
+}
+
+main {
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainBox {
+  border: 1px solid gray;
+  width: 900px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 2rem;
+}
+
+.nav-link {
+  font: inherit;
+  background: none;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-link.active {
+  color: white;
+  text-decoration: underline;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-list .date {
+  color: gray;
+  white-space: nowrap;
+}
+
+.post-list a,
+#contact a {
+  color: gray;
+  text-decoration: none;
+}
+
+.post-list a:hover,
+#contact a:hover {
+  color: white;
+}
+
+#contact a {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.blog-layout {
+  display: flex;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.toc {
+  flex: 0 0 220px;
+  position: sticky;
+  top: 4rem;
+  align-self: flex-start;
+}
+
+.toc .back {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 2rem;
+}
+
+.toc nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.toc nav a {
+  color: gray;
+  text-decoration: none;
+}
+
+.toc nav a.sub {
+  padding-left: 1.25rem;
+}
+
+.toc nav a.active,
+.toc nav a:hover {
+  color: white;
+}
+
+.post {
+  flex: 1;
+  max-width: 750px;
+}
+
+.post-title {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.post-date,
+.post-author {
+  color: gray;
+}
+
+.post-author {
+  margin-bottom: 3rem;
+}
+
+.post section {
+  margin-bottom: 2.5rem;
+}
+
+.post h2,
+.post h3 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.post p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+#about p {
+  margin-bottom: 1rem;
+}

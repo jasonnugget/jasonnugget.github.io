@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>j4son.dev — not found</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script>
+    // GitHub Pages can't rewrite, so /about, /projects and /contact land here.
+    // Hand them back to index.html, which restores the URL and opens the tab.
+    (function () {
+      var path = location.pathname.replace(/\/+$/, "");
+      if (["/about", "/projects", "/contact"].indexOf(path) !== -1) {
+        sessionStorage.setItem("redirect", path);
+        location.replace("/");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <div class="mainBox notfound">
+      <p>404 — nothing here.</p>
+      <p><a href="/">back</a></p>
+    </div>
+  </main>
+</body>
+</html>

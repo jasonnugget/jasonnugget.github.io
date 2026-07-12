@@ -42,6 +42,7 @@ main {
   color: gray;
   cursor: pointer;
   padding: 0;
+  text-decoration: none;
 }
 
 .nav-link.active {
@@ -87,6 +88,20 @@ main {
 #contact a {
   display: block;
   margin-bottom: 0.5rem;
+}
+
+.notfound {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notfound a {
+  color: gray;
+}
+
+.notfound a:hover {
+  color: white;
 }
 
 .blog-layout {
@@ -167,4 +182,18 @@ main {
 
 #about p {
   margin-bottom: 1rem;
+}
+
+.post-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.post-links a {
+  color: gray;
+  text-decoration: none;
+}
+
+.post-links a:hover {
+  color: white;
 }

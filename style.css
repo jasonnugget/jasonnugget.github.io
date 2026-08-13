@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   min-height: 100vh;
   background-color: black;

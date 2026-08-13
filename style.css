@@ -184,6 +184,45 @@ main {
   margin-bottom: 1rem;
 }
 
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.post figure {
+  margin: 0 0 1rem 0;
+}
+
+.post figcaption {
+  color: gray;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.post .img-left {
+  float: left;
+  width: 260px;
+  max-width: 45%;
+  margin: 0.25rem 1.5rem 1rem 0;
+}
+
+/* keep the page flow normal after a floated image */
+.post section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 600px) {
+  .post .img-left {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
 .post-links {
   display: flex;
   gap: 1.5rem;

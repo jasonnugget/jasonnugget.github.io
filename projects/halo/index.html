@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>j4son.dev — halo</title>
+  <link rel="stylesheet" href="/style.css?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="blog-layout">
+    <aside class="toc">
+      <a href="/projects" class="back">back</a>
+      <nav>
+        <a href="#project">what we built</a>
+        <a href="#building">how we built it</a>
+        <a href="#takeaways">takeaways</a>
+        <a href="#links">links</a>
+      </nav>
+    </aside>
+    <article class="post">
+      <h1 class="post-title">Halo</h1>
+      <p class="post-date">Shell Hacks 2026</p>
+      <p>First Place Waymo Track · First Place State Farm Track</p>
+      <div class="project-art post-art"><pre data-project-art="halo" aria-hidden="true"></pre></div>
+
+      <section id="project">
+        <h3>what we built</h3>
+        <p>Initially, we were going to build glasses with a live agent that tracked your finances and purchases in real time, but
+          also gave feedback and informed you if there was a cheaper option nearby. We assumed there would be a finance track, but when the tracks
+          were released, we had to completely repivot. We saw that there were Waymo and State Farm tracks. The Waymo track mainly inspired us,
+          and thus we thought of a helmet that protects people on the road who are not in cars. Car systems have been rapidly advancing,
+          but there is nothing for people who share the road with these cars.
+        </p>
+      </section>
+      <section id="building">
+        <h3>how we built it</h3>
+        <p>This was my first ever hardware project, and I learned a lot, like how to not spend 4 hours installing an operating
+          system on a Raspberry Pi 5. We assembled it with the Raspberry Pi 5 as the main component, and we had a subsystem
+          with an Arduino Uno R3 that had an ultrasonic sensor connected to it. We had two cameras and an OLED display connected to the Raspberry Pi 5 also. 
+          We used cameras in the front and back to detect if cars and objects were coming directly at us by using a YOLO model and an arbitrary line.
+          If something was headed towards that line, it meant it was most likely to hit us. The display was transparent and showed arrows indicating which direction a car was coming 
+          from and would flash if we thought it was going to hit us. It also featured beeping whenever we believed we were going to get hit. The camera in the front detected
+          whenever we were closing in on an object too fast. Using this pipeline, we visualized how objects were detected using three.js and sent all this data to our mobile app
+          to log incidents and create data on the map for us.
+        </p>
+      </section>
+      <section id="takeaways">
+        <h3>takeaways</h3>
+        <p>I learned a lot about hardware, how things work, and using computer vision in my pipeline for something efficient like this. I learned a lot 
+          about all the different types of sensors also and methods of tracking motion and movement around us. Check out our project on GitHub and watch our funny
+          skit on our Devpost!
+        </p>
+      </section>
+      <section id="links">
+        <h3>links</h3>
+        <div class="post-links">
+          <p>
+            <a href="https://devpost.com/software/halo-1q59hf" target="_blank" rel="noopener">devpost</a>
+            <a href="https://github.com/billpquach/halo" target="_blank" rel="noopener">github</a>
+          </p>
+        </div>
+        <!-- Example: <div class="post-links"><a href="YOUR_URL" target="_blank" rel="noopener">devpost</a></div> -->
+      </section>
+    </article>
+  </div>
+  <script src="/script.js?v=5"></script>
+</body>
+</html>

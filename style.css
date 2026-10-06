@@ -26,8 +26,8 @@ main {
 
 .mainBox {
   border: 1px solid gray;
-  width: 900px;
-  height: 600px;
+  width: min(900px, 100%);
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -68,11 +68,73 @@ main {
 }
 
 .post-list li {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) auto;
   gap: 1rem;
   margin-bottom: 0.5rem;
 }
+
+.achievements {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #444;
+}
+
+.achievements h2 {
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.achievement-card {
+  color: gray;
+  text-decoration: none;
+}
+
+.achievement-card h3 {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.achievement-card:hover,
+.achievement-card:focus-visible {
+  color: white;
+}
+
+#about .achievement-event {
+  font-size: 0.75rem;
+  margin: 0.5rem 0 0;
+}
+
+.project-art {
+  --art-height: 280px;
+  container-type: inline-size;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 330px;
+  margin-bottom: 1rem;
+}
+
+.project-art pre {
+  font-family: "JetBrains Mono", monospace;
+  font-size: min(calc(90cqw / var(--art-width)), calc(var(--art-height) / var(--art-rows)));
+  line-height: 1;
+  white-space: pre;
+}
+
+.post {
+  min-width: 0;
+}
+
 
 .post-list .date {
   color: gray;
@@ -240,4 +302,45 @@ main {
 
 .post-links a:hover {
   color: white;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 1rem;
+  }
+
+  .ascii-header {
+    font-size: clamp(3px, 1.05vw, 8px);
+  }
+
+  .mainBox {
+    padding: 1.25rem;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .post-list li {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-layout {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .toc {
+    position: static;
+    flex-basis: auto;
+  }
+
+  .project-art {
+    --art-height: 240px;
+    min-height: 280px;
+  }
 }

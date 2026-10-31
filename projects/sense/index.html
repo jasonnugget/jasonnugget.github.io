@@ -4,23 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>j4son.dev — project sense</title>
-  <link rel="stylesheet" href="/style.css?v=3" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/fonts/CrayonLibre.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="module" src="/src/blog.ts"></script>
 </head>
-<body>
-  <div class="blog-layout">
+<body class="blog-page">
+  <a href="#main-content" class="skip-link">skip to article</a>
+  <main id="main-content" class="blog-layout glass-panel">
+    <div class="blog-scroll" tabindex="0" role="region" aria-label="Scrollable blog content">
 
    
     <aside class="toc">
-      <a href="/projects" class="back">back</a>
-      <nav>
+      <a href="/" class="blog-brand" aria-label="j4son.dev home">j4son.dev</a>
+      <a href="/#projects" class="back">back to projects</a>
+      <nav aria-label="Article sections">
         <a href="#section-one">my first project</a>
       </nav>
     </aside>
 
     <!-- RIGHT: the post. each <section> needs an id matching a TOC link. -->
-    <article class="post">
-      <h1 class="post-title">project sense</h1>
+    <article class="post" aria-labelledby="post-title">
+      <h1 id="post-title" class="post-title">project sense</h1>
       <p class="post-date">july 8th, 2026</p>
 
       <section id="section-one">
@@ -29,8 +33,9 @@
       </section>
     </article>
 
-  </div>
+    </div>
+  </main>
 
-  <script src="/script.js?v=3"></script>
+  <script type="module" src="/script.js"></script>
 </body>
 </html>

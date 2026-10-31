@@ -170,7 +170,7 @@ if (tocLinks.length && sections.length) {
         }
       });
     },
-    { rootMargin: "-20% 0px -70% 0px" }
+    { root: document.querySelector(".blog-scroll"), rootMargin: "-20% 0px -70% 0px" }
   );
 
   sections.forEach((s) => observer.observe(s));

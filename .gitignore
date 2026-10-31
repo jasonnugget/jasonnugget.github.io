@@ -1,17 +1,51 @@
-.claude
+# Local assistant and editor settings
+.claude/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Operating system files
 .DS_Store
 Thumbs.db
 Desktop.ini
 
-# installed dependencies and generated build output
+# Installed dependencies, build output, and caches
 node_modules/
 /dist/
+.vite/
+.vite-temp/
+.cache/
+.eslintcache
+*.tsbuildinfo
 
-# package manager debug logs
+# Local environment files and secrets; keep shareable examples
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+.envrc
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Logs and temporary files
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.tmp
+*.temp
 
-# local-only blog post template (copy it to make a new post)
+# Generated test and coverage reports
+/coverage/
+/playwright-report/
+/test-results/
+
+# Local-only blog post template (copy it to make a new post)
 blog.template.html

@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Crayon Libre';
+  src: url('/fonts/CrayonLibre.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme { --font-mono: 'JetBrains Mono', monospace; }
+:root {
+  font-family: 'JetBrains Mono', monospace;
+  color: #302e29; background: #f5f1e7;
+  font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;
+}
+body { margin: 0; min-width: 280px; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+::selection { background: #ffda62; color: #111; }
+:focus-visible { outline: 2px solid #242424; outline-offset: 6px; border-radius: 2px; }
+.page-shell {
+  padding-top: clamp(24px, 4.5vh, 48px);
+}
+.rubiks-canvas { opacity: 1; }
+.site-header, .glass-panel { animation: portfolio-fade-in 2s ease-out backwards; }
+@keyframes portfolio-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.site-header { padding: 0 20px 28px; }
+.logo {
+  margin: 0 auto; color: #111;
+  font-family: 'Crayon Libre', cursive;
+  font-size: clamp(88px, 10vw, 160px);
+  font-weight: 400; line-height: 1.35;
+}
+.glass-panel {
+  position: relative;
+  isolation: isolate;
+  width: 84%; max-width: 1400px;
+  min-height: max(620px, 68vh);
+  padding: 56px clamp(32px, 5vw, 84px) 64px;
+  filter: drop-shadow(0 12px 22px rgba(48, 40, 27, 0.12));
+  font-size: clamp(17px, 1.25vw, 20px); line-height: 1.75;
+}
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fcfaf3;
+  clip-path: polygon(
+    0.8% 1.2%, 20% 0.3%, 44% 1%, 70% 0%, 98.6% 0.8%,
+    100% 4%, 99.5% 32%, 100% 65%, 99% 98.6%,
+    76% 99.3%, 49% 98.8%, 23% 100%, 0.5% 98.2%,
+    0% 69%, 0.6% 34%
+  );
+}
+.portfolio-nav { margin-bottom: 36px; font-size: 15px; }
+.page-shell > .glass-panel { display: flex; flex-direction: column; }
+.page-shell > .glass-panel > [role='tabpanel']:not([hidden]) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.about-section { display: flex; flex: 1; flex-direction: column; gap: 36px; }
+.about-copy {
+  width: 100%;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(18px, 1.45vw, 22px);
+  line-height: 1.8;
+  letter-spacing: 0.005em;
+}
+.about-copy p + p { margin-top: 26px; }
+.about-note {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid #302e2926;
+  color: #686359;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.8;
+}
+.about-note h2 {
+  margin-bottom: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #514d45;
+}
+.achievements-section { margin-top: 32px; padding-top: 28px; border-top: 1px solid #24242455; }
+.nav-tab { position: relative; color: #62626a; transition: color 150ms; }
+.nav-tab:hover, .nav-tab[aria-selected='true'] { color: #242424; }
+.nav-tab[aria-selected='true'] { font-weight: 500; }
+.nav-tab[aria-selected='true']::after {
+  content: ''; position: absolute; height: 1px; background: currentColor; inset: auto 0 3px;
+}
+.art-frame { container-type: inline-size; }
+.ascii-art { font-family: 'JetBrains Mono', monospace; line-height: 1.02; white-space: pre; color: #292929; }
+.ascii-halo { font-size: min(1.08cqw, 3.8px); }
+.ascii-ottotrade { font-size: min(1.63cqw, 5.7px); }
+.text-link { text-underline-offset: 5px; }
+.text-link:hover { text-decoration: underline; }
+.skip-link { position: fixed; top: -100px; left: 16px; z-index: 50; background: white; padding: 12px 16px; }
+.skip-link:focus { top: 16px; }
+@media (max-width: 639px) {
+  .page-shell { padding-top: 20px; }
+  .site-header { padding: 0 16px 22px; }
+  .logo { font-size: clamp(56px, 17vw, 88px); }
+  .glass-panel { width: 92%; min-height: 70vh; padding: 34px 26px 42px; font-size: 15px; line-height: 1.7; }
+  .portfolio-nav { margin-bottom: 26px; font-size: 13px; }
+  .about-copy { font-size: 17px; line-height: 1.8; }
+  .about-copy p + p { margin-top: 23px; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .glass-panel { width: 90%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+  .site-header, .glass-panel { animation: none; }
+}

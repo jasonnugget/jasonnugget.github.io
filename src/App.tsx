@@ -38,7 +38,7 @@ export default function App() {
   return <>
     <a href="#main-content" className="skip-link">skip to content</a>
     <RubiksBackground />
-    <div className="page-shell relative z-10 pb-20">
+    <div className="page-shell relative z-10">
       <Header />
       <GlassPanel>
         <Navigation active={active} onChange={changeTab} />

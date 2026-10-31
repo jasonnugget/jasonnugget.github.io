@@ -20,7 +20,11 @@ button { cursor: pointer; }
 ::selection { background: #ffda62; color: #111; }
 :focus-visible { outline: 2px solid #242424; outline-offset: 6px; border-radius: 2px; }
 .page-shell {
-  padding-top: clamp(24px, 4.5vh, 48px);
+  display: grid;
+  /* Equal space above and below keeps the paper centered in the viewport. */
+  grid-template-rows: minmax(0, 1fr) minmax(0, 4fr) minmax(0, 1fr);
+  height: 100svh;
+  padding-block: clamp(12px, 2svh, 24px);
 }
 .rubiks-canvas { opacity: 1; }
 .site-header, .glass-panel { animation: portfolio-fade-in 2s ease-out backwards; }
@@ -28,12 +32,12 @@ button { cursor: pointer; }
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.site-header { padding: 0 20px 28px; }
+.site-header { align-self: center; padding-inline: 20px; }
 .logo {
   margin: 0 auto; color: #111;
   font-family: 'Crayon Libre', cursive;
-  font-size: clamp(88px, 10vw, 160px);
-  font-weight: 400; line-height: 1.35;
+  font-size: min(10vw, 12svh);
+  font-weight: 400; line-height: 1.1;
 }
 .glass-panel {
   position: relative;
@@ -58,11 +62,24 @@ button { cursor: pointer; }
   );
 }
 .portfolio-nav { margin-bottom: 36px; font-size: 15px; }
-.page-shell > .glass-panel { display: flex; flex-direction: column; }
+.page-shell > .glass-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  padding-block: clamp(20px, 4svh, 56px);
+}
+.page-shell .portfolio-nav { flex-shrink: 0; margin-bottom: clamp(12px, 3svh, 36px); }
 .page-shell > .glass-panel > [role='tabpanel']:not([hidden]) {
   display: flex;
   flex: 1;
   flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #b5ad9e transparent;
 }
 .about-section { display: flex; flex: 1; flex-direction: column; gap: 36px; }
 .about-copy {
@@ -105,9 +122,8 @@ button { cursor: pointer; }
 .skip-link { position: fixed; top: -100px; left: 16px; z-index: 50; background: white; padding: 12px 16px; }
 .skip-link:focus { top: 16px; }
 @media (max-width: 639px) {
-  .page-shell { padding-top: 20px; }
-  .site-header { padding: 0 16px 22px; }
-  .logo { font-size: clamp(56px, 17vw, 88px); }
+  .site-header { padding-inline: 16px; }
+  .logo { font-size: min(17vw, 12svh); }
   .glass-panel { width: 92%; min-height: 70vh; padding: 34px 26px 42px; font-size: 15px; line-height: 1.7; }
   .portfolio-nav { margin-bottom: 26px; font-size: 13px; }
   .about-copy { font-size: 17px; line-height: 1.8; }

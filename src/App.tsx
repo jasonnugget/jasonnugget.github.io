@@ -1,26 +1,24 @@
 import { useEffect, useState } from 'react';
-import { RubiksBackground } from './components/RubiksBackground';
 import { Header } from './components/Header';
-import { GlassPanel } from './components/GlassPanel';
 import { Navigation, tabs } from './components/Navigation';
 import type { Tab } from './components/Navigation';
-import { About } from './components/About';
+import { Blog } from './components/Blog';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 
 function currentTab(): Tab {
   const path = window.location.pathname.replace(/^\/|\/$/g, '');
   const hash = window.location.hash.slice(1);
-  return tabs.find(tab => tab === hash || tab === path) ?? 'about';
+  return tabs.find(tab => tab === hash || tab === path) ?? 'blog';
 }
 
 export default function App() {
   const [active, setActive] = useState<Tab>(currentTab);
   useEffect(() => {
     const redirect = sessionStorage.getItem('redirect');
-    if (redirect && tabs.some(tab => `/${tab}` === redirect)) {
+    if (redirect && (redirect === '/about' || tabs.some(tab => `/${tab}` === redirect))) {
       sessionStorage.removeItem('redirect');
-      history.replaceState(null, '', `/#${redirect.slice(1)}`);
+      history.replaceState(null, '', `/#${redirect === '/about' ? 'blog' : redirect.slice(1)}`);
       setActive(currentTab());
     }
     const sync = () => setActive(currentTab());
@@ -37,15 +35,14 @@ export default function App() {
 
   return <>
     <a href="#main-content" className="skip-link">skip to content</a>
-    <RubiksBackground />
-    <div className="page-shell relative z-10">
+    <div className="page-shell">
       <Header />
-      <GlassPanel>
+      <main id="main-content" className="main-box">
         <Navigation active={active} onChange={changeTab} />
         {tabs.map(tab => <div key={tab} id={`panel-${tab}`} role="tabpanel" aria-labelledby={`tab-${tab}`} tabIndex={0} hidden={active !== tab}>
-          {tab === 'about' ? <About /> : tab === 'projects' ? <Projects /> : <Contact />}
+          {tab === 'blog' ? <Blog /> : tab === 'projects' ? <Projects /> : <Contact />}
         </div>)}
-      </GlassPanel>
+      </main>
     </div>
   </>;
 }

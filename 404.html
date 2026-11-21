@@ -11,7 +11,7 @@
     // Hand them back to index.html, which restores the URL and opens the tab.
     (function () {
       var path = location.pathname.replace(/\/+$/, "");
-      if (["/about", "/projects", "/contact"].indexOf(path) !== -1) {
+      if (["/about", "/blog", "/projects", "/contact"].indexOf(path) !== -1) {
         sessionStorage.setItem("redirect", path);
         location.replace("/");
       }

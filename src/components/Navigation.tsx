@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-export const tabs = ['about', 'projects', 'contact'] as const;
+export const tabs = ['blog', 'projects', 'contact'] as const;
 export type Tab = typeof tabs[number];
 
 export function Navigation({ active, onChange }: { active: Tab; onChange: (tab: Tab) => void }) {

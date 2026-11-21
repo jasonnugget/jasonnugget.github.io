@@ -8,6 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         home: 'index.html',
+        aboutMe: 'blog/about-me/index.html',
         halo: 'projects/halo/index.html',
         ottotrade: 'projects/ottotrade/index.html',
         sense: 'projects/sense/index.html',

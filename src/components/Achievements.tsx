@@ -13,8 +13,8 @@ export function Achievements({ standalone = false }: { standalone?: boolean }) {
         <div className="art-frame flex h-[210px] items-center justify-center overflow-hidden sm:h-[230px]" aria-hidden="true">
           <pre className={`ascii-art ascii-${project.id} select-none`}>{projectArt[project.id]}</pre>
         </div>
-        <h3 className="mt-4 text-[13px] leading-6 underline-offset-4 group-hover:underline">{project.title}</h3>
-        <p className="mt-1 text-xs leading-6 text-zinc-600">{project.event}</p>
+        <h3 className="mt-4 text-sm leading-6 underline-offset-4 group-hover:underline">{project.title}</h3>
+        <p className="mt-1 text-sm leading-6">{project.event}</p>
       </a>)}
     </div>
   </section>;
